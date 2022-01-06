@@ -10,8 +10,9 @@
 }
 
 
-/* Landing Page */
+/* Paramètres général de la Landing Page */
 body {
+  border: 1px solid green;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -32,6 +33,7 @@ img {
 
 /* Barre de navigation : Paramètres */
 .topnav {
+  border: 1px solid green; 
   overflow: hidden;
   margin: 3.5%;
 }
@@ -69,7 +71,7 @@ img {
   display: none;
 }
 
-/* Navigation mobile : Paramètres */
+/* Navigation mobile : Paramètres avec JS ! */
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -104,6 +106,7 @@ img {
 
 /* Homepage contenu */
 main {
+  border: 1px solid green;
   font-size: 130%;
   font-weight: bolder;
   color: black;
@@ -113,8 +116,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -527,4 +528,3 @@ footer {
     opacity: 1;
   }
 }
-

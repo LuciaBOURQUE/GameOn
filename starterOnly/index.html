@@ -24,7 +24,7 @@
           <i class="fa fa-bars"></i>
         </a>
       </div>
-    </div>
+    </div> <!-- Fin de la barre de navigation -->
 
     <main>
       <div class="hero-section"> <!-- Homepage contenu -->
@@ -35,7 +35,7 @@
         </div>
 
         <div class="hero-img"><img src="./bg_img.jpg" alt="img" /></div>
-        <button class="btn-signup modal-btn">Je m'inscris</button>
+      <!--  <button class="btn-signup modal-btn">Je m'inscris</button>  Problématique -->
       </div>
 
 
@@ -47,10 +47,9 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
-            >
-              <div
-                class="formData">
+              onsubmit="return validate();" >
+
+              <div class="formData"> <!-- Prénom -->
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -60,8 +59,8 @@
                   minlength="2"
                 /><br>
               </div>
-              <div
-                class="formData">
+
+              <div class="formData"> <!-- Nom -->
                 <label>Nom</label><br>
                 <input
                   class="text-control"
@@ -70,8 +69,8 @@
                   name="last"
                 /><br>
               </div>
-              <div
-                class="formData">
+
+              <div class="formData"> <!-- Email -->
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
@@ -80,8 +79,8 @@
                   name="email"
                 /><br>
               </div>
-              <div
-                class="formData">
+
+              <div class="formData"> <!-- Date de naissance -->
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -90,108 +89,112 @@
                   name="birthdate"
                 /><br>
               </div>
-              <div
-                class="formData">
+
+              <div class="formData"> <!-- Question tournois participation -->
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input
+                class="text-control"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="0"
+                max="99">
               </div>
+
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-              <div
-                class="formData">
+
+              <div class="formData"> <!-- Cases à cocher : total 6 -->
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location1"
                   name="location"
-                  value="New York"
-                />
+                  value="New York" />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
-                  New York</label
-                >
+                  New York</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location2"
                   name="location"
-                  value="San Francisco"
-                />
+                  value="San Francisco" />
                 <label class="checkbox-label" for="location2">
                   <span class="checkbox-icon"></span>
-                  San Francisco</label
-                >
+                  San Francisco</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location3"
                   name="location"
-                  value="Seattle"
-                />
+                  value="Seattle" />
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>
-                  Seattle</label
-                >
+                  Seattle</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location4"
                   name="location"
-                  value="Chicago"
-                />
+                  value="Chicago" />
                 <label class="checkbox-label" for="location4">
                   <span class="checkbox-icon"></span>
-                  Chicago</label
-                >
+                  Chicago</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location5"
                   name="location"
-                  value="Boston"
-                />
+                  value="Boston" />
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>
-                  Boston</label
-                >
+                  Boston</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location6"
                   name="location"
-                  value="Portland"
-                />
+                  value="Portland" />
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
-                  Portland</label
-                >
-              </div>
+                  Portland</label>
+              </div> <!-- Fin des cases à cocher -->
 
-              <div
-                class="formData">
+              <div class="formData"> <!-- Cases à cocher : Conditions + newsletter -->
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
-                />
+                  checked />
+
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+
+                <input
+                class="checkbox-input"
+                type="checkbox"
+                id="checkbox2" />
+
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
+
               <input
                 class="btn-submit"
                 type="submit"
                 class="button"
-                value="C'est parti"
-              />
+                value="C'est parti" />
             </form>
           </div>
         </div>
