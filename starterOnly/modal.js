@@ -15,10 +15,14 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+// + Créer une constante pour fermeture modal
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-// launch modal form
+// launch modal form > ouverture de la modal
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+// Fonction : ouverture et fermeture de la modal
+// Fonction : Données des éléments (formulaire)
