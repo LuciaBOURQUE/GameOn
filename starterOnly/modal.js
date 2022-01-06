@@ -1,3 +1,7 @@
+// Version mobile : Menu burger paramètres
+// Animation : Par défaut la barre de navigation à une class "topnav"
+// Mais dès lors qu'on click "onclick" sur l'icon de la barre de navigation
+// La barre de navigation change de class dans laquel on lui rajoute "topnav responsive"
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
