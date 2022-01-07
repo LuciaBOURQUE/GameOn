@@ -16,6 +16,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 // + Créer une constante pour fermeture modal
+// + Créer une constante pour ouverture "validation réussie"
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -25,4 +26,41 @@ function launchModal() {
 }
 
 // Fonction : ouverture et fermeture de la modal
-// Fonction : Données des éléments (formulaire)
+// Fonction : Données des éléments (formulaire) avec formData
+// Fonction : Validation réussie et message de confirmation "Merci pour votre inscription"
+
+
+
+
+// Le champ du prénom a un minimum de 2 caractères et ne doit pas être vide
+// "Veuillez entrez 2 caractères ou plus"
+
+function getErrorFirst() {
+  return document.getElementById("data-error");
+}
+
+// Création fonction du bouton non-envoie si formulaire pas remplit avec les messages d'erreurs
+function disableSubmit(disabled) {
+  if (disabled) {
+    document
+    .getElementsByClassName("btn-submit")
+    .setAttribute("disabled",true);
+  } else {
+    document
+    .getElementsByClassName("btn-submit")
+    .setAttribute("disabled");
+  }
+}
+
+// - (if/else) Si il n'y a pas 2 caractères alors on affiche l'erreur "data-error"
+// - (if else) Sinon on ne met rien
+document
+.getElementById("first")
+.addEventListener("input", function(e) {
+  if (/minlength/.test(e.target.value)) {
+    getErrorFirst().innerText="Veuillez entrez 2 caractères ou plus";
+    disableSubmit(false);
+  } else {
+    disableSubmit(true);
+  }
+})

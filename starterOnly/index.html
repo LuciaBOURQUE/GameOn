@@ -27,7 +27,7 @@
     </div> <!-- Fin de la barre de navigation -->
 
     <main>
-      <div class="hero-section"> <!-- Homepage contenu -->
+      <div class="hero-section"> <!-- Homepage contenu visible -->
         <div class="hero-content">
           <h1 class="hero-headline">Marathon national<br>de jeux vidéos</h1>
           <p class="hero-text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
@@ -57,7 +57,10 @@
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                  required
+                />
+                <div class="result" id="data-error" ></div>
+                <br>
               </div>
 
               <div class="formData"> <!-- Nom -->
