@@ -56,10 +56,9 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                  required
+                  required minlength="2"
                 />
-                <div class="result" id="data-error" ></div>
+                <div class="error"></div>
                 <br>
               </div>
 
@@ -80,7 +79,9 @@
                   type="email"
                   id="email"
                   name="email"
+                  required
                 /><br>
+                <div class="error"></div>
               </div>
 
               <div class="formData"> <!-- Date de naissance -->
@@ -102,6 +103,7 @@
                 name="quantity"
                 min="0"
                 max="99">
+                <div class="error-quantity"></div>
               </div>
 
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -197,7 +199,8 @@
                 class="btn-submit"
                 type="submit"
                 class="button"
-                value="C'est parti" />
+                value="C'est parti"
+                > <!-- Mettre disabled si pas fini-->
             </form>
           </div>
         </div>
