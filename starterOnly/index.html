@@ -49,7 +49,7 @@
               method="get"
               onsubmit="return validate();" >
 
-              <div class="formData"> <!-- Prénom -->
+              <div class="formData" data-error="Veuillez entrez 2 caractères ou plus"> <!-- Prénom -->
                 <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
@@ -58,21 +58,21 @@
                   name="first"
                   required minlength="2"
                 />
-                <div class="error"></div>
                 <br>
               </div>
 
-              <div class="formData"> <!-- Nom -->
+              <div class="formData" data-error="Veuillez entrez 2 caractères ou plus"> <!-- Nom -->
                 <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
+                  required
                 /><br>
               </div>
 
-              <div class="formData"> <!-- Email -->
+              <div class="formData" data-error="Email incorrecte"> <!-- Email -->
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
@@ -81,7 +81,6 @@
                   name="email"
                   required
                 /><br>
-                <div class="error"></div>
               </div>
 
               <div class="formData"> <!-- Date de naissance -->
@@ -91,6 +90,7 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  data-error="Veuillez entrer votre date de naissance."
                 /><br>
               </div>
 
@@ -103,7 +103,6 @@
                 name="quantity"
                 min="0"
                 max="99">
-                <div class="error-quantity"></div>
               </div>
 
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
