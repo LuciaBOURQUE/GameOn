@@ -59,6 +59,7 @@
                   required minlength="2"
                 />
                 <br>
+                <span class="data-error">Veuillez entrez 2 caractères ou plus</span>
               </div>
 
               <div class="formData" data-error="Veuillez entrez 2 caractères ou plus"> <!-- Nom -->
@@ -83,18 +84,17 @@
                 /><br>
               </div>
 
-              <div class="formData"> <!-- Date de naissance -->
+              <div class="formData" data-error="Veuillez entrer votre date de naissance."> <!-- Date de naissance -->
                 <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  data-error="Veuillez entrer votre date de naissance."
                 /><br>
               </div>
 
-              <div class="formData"> <!-- Question tournois participation -->
+              <div class="formData" data-error="Entrez un chiffre, si 0 mettez 0"> <!-- Question tournois participation -->
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input
                 class="text-control"
@@ -107,7 +107,7 @@
 
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
 
-              <div class="formData"> <!-- Cases à cocher : total 6 -->
+              <div class="formData" data-error="Vous devez choisir une option."> <!-- Cases à cocher : total 6 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -169,7 +169,7 @@
                   Portland</label>
               </div> <!-- Fin des cases à cocher -->
 
-              <div class="formData"> <!-- Cases à cocher : Conditions + newsletter -->
+              <div class="formData" data-error="Vous devez vérifier que tous les termes et conditions."> <!-- Cases à cocher : Conditions + newsletter -->
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -198,8 +198,7 @@
                 class="btn-submit"
                 type="submit"
                 class="button"
-                value="C'est parti"
-                > <!-- Mettre disabled si pas fini-->
+                value="C'est parti" /> <!-- Mettre disabled si pas fini-->
             </form>
           </div>
         </div>

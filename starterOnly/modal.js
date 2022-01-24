@@ -1,3 +1,5 @@
+// PARTIE A - Navigation et modal
+
 // Version mobile : Menu burger paramètres
 // Animation : Par défaut la barre de navigation à une class "topnav"
 // Mais dès lors qu'on click "onclick" sur l'icon de la barre de navigation
@@ -29,24 +31,105 @@ function closeModal () {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// PARTIE B - Création du bouton "Submit" (reprendre modal ouverture/fermeture)
+const modalSucess = document.getElementsByClassName("bground-check");
+function lauchModalSucess() { // + Ajout du ".text-control"
+  modalSucess.style.display = "block";
+}
+
+/* SI il n'y a pas d'erreurs, L'envoie est réussis
+    Et ouvre une nouvelle fenêtre "Merci pour votre inscription"
+    Avec une "close" et un bouton "Fermer"
+  SINON les erreurs sont affichés selon la case en utilisant la fonction précédente
+const form = document.forms["reserve"];
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  errorFirst();
+})
+console.log(form); */
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// PARTIE C - Fonctions des évènements inputs
+
+// Fonction de l'attribut
+// const errorData = document.querySelectorAll('.formData[data-error]');
+//console.log(errorData);
+
+// Fonction style erreurs
+function setError() {
+  const errorData = document.querySelector('.data-error');
+  errorData.style.display = "block";
+}
+function setSuccess() { // + Ajout du ".text-control"
+  errorData.style.display = "none";
+}
+
+// const errorData = document.querySelectorAll('.formData[data-error] .text-control');
+// On doit avoir une fonction différente pour chaque erreurs
+  // 1-2) Champ prénom : 
+  // 3) Champ adresse électronique :
+  // 4) Champ date de naissance :
+  // 5) Champ nombre tournoi :
+  // 6) Champ nombre tournoi :
+
+// Fonction Prénom/nom:
+const first = document.getElementById("first");
+function errorFirst() {
+  let firstCheckValue = first.value.trim(); 
+    if (firstCheckValue.length <= 0 ) {
+      setError();
+    } else {
+      setSuccess();
+    }
+}
+
+const form = document.forms["reserve"];
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  errorFirst();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Zone de tests
+
+function errorMessage() {
+  var error = document.getElementById("error")
+  if (isNaN(document.getElementById("number").value)) 
+  {
+        
+      // Changing content and color of content
+      error.textContent = "Please enter a valid number"
+      error.style.color = "red"
+  } else {
+      error.textContent = ""
+  }
+}
+
+
+
 // 1-2) Champ prénom : Bien prendre en compte tous les éléments nécessaire
 // Le champ du prénom a un minimum de 2 caractères et ne doit pas être vide
 // - (if/else) SI la valeur est inférieur à 2 caractères (minlength) 
       // ALORS on affiche l'erreur "Veuillez entrez 2 caractères ou plus (data-error-visible)"
 // - (if else) SINON on ne met rien ("return" de type break)
-
-// IDEM POUR "NOM" !!!
-function messageFirst () {
-  let firstError = document.getElementById("first");
-  firstError.addEventListener("input", function(e){
-    if (/minlength/.test(e.target.value)) {
-      firstError.dataset.error
-      return false;
-    } 
-  })
-}
-console.log(messageFirst);
-
 
 
 // 3) Champ adresse électronique :
@@ -68,41 +151,6 @@ function numberQuantity() {
   if (isNaN(quantity) || quantity<1 || quantity>99) {
     text = "Veuillez entrer un nombre" // sinon mettre "return false;"
   } else {
-    text = "OK !"
-  }
-  document.getElementById("error-quantity").innerHTML = text;
-}
-/*
-quantity.addEventListener("input", function (e) {
-  if (quantity == " ") {
-    error.innerHTML="Veuillez entrer un nombre";
-    return false;
-  }
-}) */
-
-
-// 6)L'ensemble du formulaire :
-// Fonction : Validation réussie et message de confirmation "Merci pour votre inscription"
-function validate() {
-  let data = document.forms["reserve"] ["first"].value;
-  if (data.validity.valid) {
-
     return false;
   }
 }
-
-/*
-// Création fonction du bouton Valider : Bien prendre en compte tout les éléments nécessaire
-// - SI le formulaire n'a pas d'erreur, le bouton peut être activé
-// - SINON on affiche les messages d'erreurs dans les cases dédiés
-function disableSubmit(disabled) {
-  if (disabled) {
-    document
-    .querySelector("btn-submit")
-    .setAttribute("disabled",true);
-  } else {
-    document
-    .querySelector("btn-submit")
-    .setAttribute("disabled");
-  }
-}*/
