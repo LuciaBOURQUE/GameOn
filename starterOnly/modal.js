@@ -42,30 +42,11 @@ function lauchModalSucess() { // + Ajout du ".text-control"
     Et ouvre une nouvelle fenêtre "Merci pour votre inscription"
     Avec une "close" et un bouton "Fermer"
   SINON les erreurs sont affichés selon la case en utilisant la fonction précédente
-const form = document.forms["reserve"];
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  errorFirst();
-})
-console.log(form); */
-
+ */
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // PARTIE C - Fonctions des évènements inputs
-
-// Fonction de l'attribut
-// const errorData = document.querySelectorAll('.formData[data-error]');
-//console.log(errorData);
-
-// Fonction style erreurs
-function setError() {
-  const errorData = document.querySelector('.data-error');
-  errorData.style.display = "block";
-}
-function setSuccess() { // + Ajout du ".text-control"
-  errorData.style.display = "none";
-}
 
 // const errorData = document.querySelectorAll('.formData[data-error] .text-control');
 // On doit avoir une fonction différente pour chaque erreurs
@@ -75,54 +56,125 @@ function setSuccess() { // + Ajout du ".text-control"
   // 5) Champ nombre tournoi :
   // 6) Champ nombre tournoi :
 
-// Fonction Prénom/nom:
-const first = document.getElementById("first");
-function errorFirst() {
-  let firstCheckValue = first.value.trim(); 
-    if (firstCheckValue.length <= 0 ) {
-      setError();
-    } else {
-      setSuccess();
-    }
+/*
+function setError() {
+  document.querySelector('.data-error').style.opacity = "1";
+  return false;
 }
+function setSuccess() { // + Ajout du ".text-control"
+  document.querySelector('.data-error').style.opacity = "0";
+  return true;
+} */
 
-const form = document.forms["reserve"];
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  errorFirst();
-})
+// Prénom
+function firstInput () {
+  let first = document.forms["myForm"]["first"].value;
+  if(first.length <= 1 || first == ""){
+    document.querySelectorAll('.data-error')[0]
+    .style.opacity = "1";
 
+    document.querySelectorAll('.text-control')[0]
+    .style.border = "2px solid #e54858";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Zone de tests
-
-function errorMessage() {
-  var error = document.getElementById("error")
-  if (isNaN(document.getElementById("number").value)) 
-  {
-        
-      // Changing content and color of content
-      error.textContent = "Please enter a valid number"
-      error.style.color = "red"
+    return false;
   } else {
-      error.textContent = ""
+    document.querySelectorAll('.data-error')[0]
+    .style.opacity = "0";
+    return true;
   }
 }
 
+
+
+// Nom
+function lastInput () {
+  let last = document.forms["myForm"]["last"].value;
+  if(last.length <= 1 || last.length == ""){
+    document.querySelectorAll('.data-error')[1]
+    .style.opacity = "1";
+
+    document.querySelectorAll('.text-control')[1]
+    .style.border = "2px solid #e54858";
+
+    return false;
+  } else {
+    document.querySelectorAll('.data-error')[1]
+    .style.opacity = "0";
+    return true;
+  }
+}
+
+
+
+// E-mail REVOIR CAR Pas valide !
+function mailInput () {
+  let mail = document.forms["myForm"]["email"].value;
+  if(!mail){
+    document.querySelectorAll('.data-error')[2]
+    .style.opacity = "1";
+
+    document.querySelectorAll('.text-control')[2]
+    .style.border = "2px solid #e54858";
+
+    return false;
+  } else {
+    document.querySelectorAll('.data-error')[2]
+    .style.opacity = "0";
+    return true;
+  }
+}
+
+
+
+// Date de naissance
+function dateInput () {
+  let date = document.forms["myForm"]["birthday"].value;
+  if(!date){
+    document.querySelectorAll('.data-error')[3]
+    .style.opacity = "1";
+
+    document.querySelectorAll('.text-control')[3]
+    .style.border = "2px solid #e54858";
+
+    return false;
+  } else {
+    document.querySelectorAll('.data-error')[3]
+    .style.opacity = "0";
+    return true;
+  }
+}
+
+
+
+
+// Action SUBMIT par le Formulaire
+function validateForm() {
+  firstInput();
+  lastInput();
+  mailInput();
+  dateInput();
+}
+
+function submitButton()  {
+    let valid = validateForm();
+    if(!valid)  {
+      return;
+    }
+    let myForm = document.forms["myForm"];
+    myForm.submit();
+}
+
+
+/*
+const form = document.forms["myForm"];
+  form.addEventListener("onsubmit", (e) => {
+    e.preventDefault();
+    errorFirst();
+  });
+*/
+
+
+// Zone de tests
 
 
 // 1-2) Champ prénom : Bien prendre en compte tous les éléments nécessaire
@@ -145,6 +197,7 @@ function errorMessage() {
 // SI aucune valeur numérique n'est sélectionné (0 étant une valeur)
     // ALORS on affiche l'erreur "Veuillez saisir un nombre, si 0 mettez 0"
 // SINON on ne met rien ("return" de type break)
+/*
 function numberQuantity() {
   let quantity = document.getElementById("quantity").value;
   let text;
@@ -153,4 +206,4 @@ function numberQuantity() {
   } else {
     return false;
   }
-}
+}*/

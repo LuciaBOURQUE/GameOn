@@ -44,12 +44,12 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
-              name="reserve"
+              name="myForm"
               action="index.html"
               method="get"
-              onsubmit="return validate();" >
+              onsubmit="return validateForm()" >
 
-              <div class="formData" data-error="Veuillez entrez 2 caractères ou plus"> <!-- Prénom -->
+              <div class="formData"> <!-- Prénom -->
                 <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
@@ -62,18 +62,19 @@
                 <span class="data-error">Veuillez entrez 2 caractères ou plus</span>
               </div>
 
-              <div class="formData" data-error="Veuillez entrez 2 caractères ou plus"> <!-- Nom -->
+              <div class="formData"> <!-- Nom -->
                 <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                  required
+                  required minlength="2"
                 /><br>
+                <span class="data-error">Veuillez entrez 2 caractères ou plus</span>
               </div>
 
-              <div class="formData" data-error="Email incorrecte"> <!-- Email -->
+              <div class="formData"> <!-- Email -->
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
@@ -82,9 +83,10 @@
                   name="email"
                   required
                 /><br>
+                <span class="data-error">Veuillez entrez une adresse mail valid</span>
               </div>
 
-              <div class="formData" data-error="Veuillez entrer votre date de naissance."> <!-- Date de naissance -->
+              <div class="formData"> <!-- Date de naissance -->
                 <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -92,6 +94,7 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
+                <span class="data-error">Veuillez entrer votre date de naissance</span>
               </div>
 
               <div class="formData" data-error="Entrez un chiffre, si 0 mettez 0"> <!-- Question tournois participation -->
@@ -198,7 +201,8 @@
                 class="btn-submit"
                 type="submit"
                 class="button"
-                value="C'est parti" /> <!-- Mettre disabled si pas fini-->
+                value="C'est parti"
+                onclick="submitButton()" /> <!-- Mettre disabled si pas fini-->
             </form>
           </div>
         </div>
