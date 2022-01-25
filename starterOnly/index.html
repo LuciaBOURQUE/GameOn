@@ -49,68 +49,65 @@
               method="get"
               onsubmit="return validateForm()" >
 
-              <div class="formData"> <!-- Prénom -->
+                <!-- Prénom -->
                 <label for="first">Prénom</label><br>
                 <input
-                  class="text-control"
+                  class="text-control first-name"
                   type="text"
                   id="first"
                   name="first"
                   required minlength="2"
                 />
                 <br>
-                <span class="data-error">Veuillez entrez 2 caractères ou plus</span>
-              </div>
+                <span class="data-error first-error">Veuillez entrez 2 caractères ou plus</span>
 
-              <div class="formData"> <!-- Nom -->
+                <!-- Nom -->
                 <label for="last">Nom</label><br>
                 <input
-                  class="text-control"
+                  class="text-control last-name"
                   type="text"
                   id="last"
                   name="last"
                   required minlength="2"
                 /><br>
-                <span class="data-error">Veuillez entrez 2 caractères ou plus</span>
-              </div>
+                <span class="data-error last-error">Veuillez entrez 2 caractères ou plus</span>
 
-              <div class="formData"> <!-- Email -->
+                <!-- Email -->
                 <label for="email">E-mail</label><br>
                 <input
-                  class="text-control"
-                  type="email"
+                  class="text-control mail-name"
+                  type="email mail-name"
                   id="email"
                   name="email"
                   required
                 /><br>
-                <span class="data-error">Veuillez entrez une adresse mail valid</span>
-              </div>
+                <span class="data-error mail-error">Veuillez entrez une adresse mail valide</span>
 
-              <div class="formData"> <!-- Date de naissance -->
+                <!-- Date de naissance -->
                 <label for="birthdate">Date de naissance</label><br>
                 <input
-                  class="text-control"
+                  class="text-control birthday-name"
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                 /><br>
-                <span class="data-error">Veuillez entrer votre date de naissance</span>
-              </div>
+                <span class="data-error birthday-error">Veuillez entrez intégralement votre date de naissance</span>
 
-              <div class="formData" data-error="Entrez un chiffre, si 0 mettez 0"> <!-- Question tournois participation -->
+                <!-- Question tournois participation -->
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input
-                class="text-control"
+                class="text-control quantity-name"
                 type="number"
                 id="quantity"
                 name="quantity"
                 min="0"
-                max="99">
-              </div>
+                max="99"/><br>
+                <span class="data-error quantity-error">Entrez un chiffre entre 0 et 99</span>
 
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+                <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
 
-              <div class="formData" data-error="Vous devez choisir une option."> <!-- Cases à cocher : total 6 -->
+              <div class="formData" id="checkbox-choice" > <!-- Cases à cocher : total 6 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -170,6 +167,7 @@
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label>
+                  <span class="data-error checkbox-error">Veuillez choisir une des options</span>
               </div> <!-- Fin des cases à cocher -->
 
               <div class="formData" data-error="Vous devez vérifier que tous les termes et conditions."> <!-- Cases à cocher : Conditions + newsletter -->
@@ -201,8 +199,7 @@
                 class="btn-submit"
                 type="submit"
                 class="button"
-                value="C'est parti"
-                onclick="submitButton()" /> <!-- Mettre disabled si pas fini-->
+                value="C'est parti" /> <!-- Mettre disabled si pas fini-->
             </form>
           </div>
         </div>
