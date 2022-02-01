@@ -167,7 +167,6 @@ main {
   padding: 0;
 }
 
-/*
 .modal-btn {
   border: 1px solid yellow;
   font-size: 145%;
@@ -180,26 +179,6 @@ main {
   border-radius: 1rem;
   cursor: pointer;
 }
-
-.button {
-  background: #fe142f;
-  margin-top: 0.5em;
-  padding: 1em;
-  color: #fff;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 16px;
-}
-.button:hover {
-  background: #3876ac;
-} */
-
-/*
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-slab);
-} */
 
 .smFont {
   font-size: 16px;
@@ -306,7 +285,7 @@ input {
 /* Mise en forme pour les champs invalides */
 .data-error {
   font-size: 0.55em;
-  color: white;
+  color: #e54858;
   display: block;
   margin: 7px 0 10px 0;
   text-align: right;
@@ -317,7 +296,7 @@ input {
 
 .error {
   border: 2px solid #e54858;
-  background-color: #FDD;
+  background-color: rgb(255, 228, 231);
 }
 
 
@@ -418,6 +397,7 @@ footer {
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0 20px;
+  font-family: var(--font-slab);
 }
 .copyrights {
   color: #fe142f;
