@@ -31,7 +31,7 @@ function closeModal () {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // PARTIE B - Fonctions des évènements inputs
 const btnSubmit = document.querySelector(".btn-submit")
-btnSubmit.addEventListener("submit", (e) => {
+btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   validateForm(); // Les données du fourmulaire doivent être validé
 })
