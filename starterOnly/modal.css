@@ -1,3 +1,4 @@
+/* Paramètres sur tout le site */
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
@@ -8,7 +9,6 @@
   margin: 0;
   padding: 0;
 }
-
 
 /* Paramètres général de la Landing Page */
 body {
@@ -29,7 +29,7 @@ img {
   padding-right: 1rem;
 }
 
-
+/* PARTIE 1 : La navigation */
 /* Barre de navigation : Paramètres */
 .topnav {
   overflow: hidden;
@@ -131,7 +131,6 @@ main {
   text-align: left;
   min-width: 424px;
 }
-/* C'est ici que le texte se superpose - À enlever ?*/
 .hero-content::after {
   content: "";
   width: 100%;
@@ -144,8 +143,7 @@ main {
 .hero-content > * {
   position: relative;
   z-index: 1;
-} /* Jusqu'ici ?*/
-
+}
 .hero-headline {
   font-size: 6rem;
   font-weight: normal;
@@ -167,24 +165,34 @@ main {
   padding: 0;
 }
 
-.modal-btn {
-  border: 1px solid yellow;
-  font-size: 145%;
+.modal-btn { /* Pour la version desktop */
+  border: none;
   background: #fe142f;
   display: flex;
-  margin: auto;
-  padding: 2em;
   color: #fff;
-  padding: 0.75rem 2.5rem;
-  border-radius: 1rem;
+  border-radius: 7px;
   cursor: pointer;
+
+  outline: none;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  padding: 15px 23px;
+  margin: 0;
+  margin-top: 59px;
+}
+.modal-btn:hover {
+  background: #3876ac;
+}
+
+.hero-section > .btn-signup {
+  display: none;
 }
 
 .smFont {
   font-size: 16px;
 }
 
-/* PARTIE 2 bis : Modal form (invisible)*/
+/* PARTIE 3 : La modale contenant le formulaire (invisible) */
 .bground { /* Par défaut le modal est fermé et n'est pas affiché */
   display: none;
   position: fixed;
@@ -211,6 +219,7 @@ main {
   padding-top: 10px;
 }
 
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -221,7 +230,7 @@ main {
   }
 }
 
-/* Modal form : Création de "l'icon" de fermeture de la modal */
+/* Modal form : Création de "l'icon" de fermeture de la modale */
 .close {
   position: absolute;
   right: 15px;
@@ -253,11 +262,11 @@ main {
   margin: 15px auto;
 }
 
-/* Modal form : paramètres des éléments */
+/* Modal form : paramètres des éléments labels/textes */
 label,
 .text-label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
@@ -272,19 +281,16 @@ input {
   padding: 8px;
   width: 100%;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 18px;
   height: 48px;
   border: 2px solid #ffffff;
   color: #0f0e11;
   transition: 0.5s;
 }
 
-
-
-
-/* Mise en forme pour les champs invalides */
+/* Mise en forme pour les champs invalides des inputs */
 .data-error {
-  font-size: 0.55em;
+  font-size: 0.50em;
   color: #e54858;
   display: block;
   margin: 7px 0 10px 0;
@@ -293,12 +299,9 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
-
-.error {
+.error { /* Création de cette class dans les inputs */
   border: 2px solid #e54858;
-  background-color: rgb(255, 228, 231);
 }
-
 
 .checkbox-label,
 .checkbox2-label {
@@ -337,6 +340,7 @@ input {
   transition: 0.3s;
   opacity: 0;
 }
+
 .checkbox-input {
   display: none;
 }
@@ -365,8 +369,8 @@ input {
   top: 19%;
 }
 
-.btn-submit,
-.btn-signup {
+/* Bouton de fin "C'est parti" qui valide/ ferme/ et ouvre la seconde modale */
+.btn-submit {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -376,20 +380,6 @@ input {
   color: #fff;
   cursor: pointer;
   border: 0;
-}
-.btn-signup {
-  outline: none;
-  text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
-  margin: 0;
-  margin-top: 59px;
-}
-.modal-btn:hover {
-  background: #3876ac;
-}
-.hero-section > .btn-signup {
-  display: none;
 }
 
 /* PARTIE 3 - Footer : paramètres */
@@ -405,6 +395,17 @@ footer {
   font-size: 1rem;
   margin: 60px 0 30px;
   font-weight: bolder;
+}
+
+
+/* PARTIE 4 : Modale de sucess */
+.hero-success {
+  border: 1px solid yellow;
+  font-size: 1em;
+  font-weight:lighter;
+  margin: 30% 0;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 800px) {

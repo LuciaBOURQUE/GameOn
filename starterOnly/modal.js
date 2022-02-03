@@ -30,6 +30,61 @@ function closeModal () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // PARTIE B - Fonctions des évènements inputs
+const btnSubmit = document.querySelector(".btn-submit")
+btnSubmit.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateForm(); // Les données du fourmulaire doivent être validé
+})
+
+
+// Action SUBMIT par le Formulaire
+function validateForm() {
+  if (
+  firstInput()&&
+  lastInput()&&
+  mailInput()&&
+  dateInput()&&
+  quantityInput()&&
+  checkboxInput()&&
+  conditionInput() ) {
+    alert("GOOD");
+    sucessLauchModal();
+    return true;
+  } else {
+    validInput();
+    alert("BAD");
+    return false;
+    }
+}
+
+function validInput () {
+  firstInput();
+  lastInput();
+  mailInput();
+  dateInput();
+  quantityInput();
+  checkboxInput();
+  conditionInput();
+}
+
+// Nouvelle modale pour la partie sucess !
+const modalSucess = document.querySelector(".bground-check");
+const closeBtnModalCheck = document.querySelector(".btn-close-modal");
+// Ouverture/fermeture 
+function sucessLauchModal() {
+  closeModal ();
+  modalSucess.style.display = "block";
+}
+// Fermeture modale sucess
+closeBtnModalCheck.addEventListener("click", closeModalCheck);
+closeBtnModal.addEventListener("click", closeModalCheck);
+function closeModalCheck () {
+  modalSucess.style.display = "none";
+}
+
+
+
+
 // Prénom
 function firstInput () {
   let first = document.forms["myForm"]["first"].value;
@@ -112,20 +167,19 @@ function quantityInput() {
 
 // Checkbox - 1 choix à sélectionner
 function checkboxInput() {
-let checkbox = document.querySelectorAll(".checkbox-input");
-
-// Si une des cases est coché (trouver une formule plus optimale)
-if(checkbox[0].checked || checkbox[1].checked
-  || checkbox[2].checked || checkbox[3].checked
-  || checkbox[4].checked || checkbox[5].checked){ 
-  document.querySelector('.checkbox-error').style.opacity = "0";
-  return true;
-} else {
-  document.querySelector('.checkbox-error').style.opacity = "1";
-  return false;
+  let checkbox = document.querySelectorAll(".checkbox-input");
+  
+  // Si une des cases est coché (trouver une formule plus optimale)
+  if(checkbox[0].checked || checkbox[1].checked
+    || checkbox[2].checked || checkbox[3].checked
+    || checkbox[4].checked || checkbox[5].checked){ 
+    document.querySelector('.checkbox-error').style.opacity = "0";
+    return true;
+  } else {
+    document.querySelector('.checkbox-error').style.opacity = "1";
+    return false;
+    }
   }
-}
-
 
 
 // Checkbox conditions - La case 1 est obligatoire l'autre optionnel
@@ -138,40 +192,4 @@ function conditionInput() {
     document.querySelector('.condition-error').style.opacity = "0";
     return true;
     }
-  }
-
-
-// Action SUBMIT par le Formulaire
-function validateForm() {
-  firstInput();
-  lastInput();
-  mailInput();
-  dateInput();
-  quantityInput();
-  checkboxInput();
-  conditionInput();
 }
-
-
-let btnSubmit = document.querySelector(".btn-submit")
-btnSubmit.addEventListener("click", e => {
-  e.preventDefault();
-  let valid = validateForm();
-  if(!valid)  {
-    return;
-  } else {
-    lauchModalSucess();
-  }
-})
-
-// PARTIE C - Création du bouton "Submit" (reprendre modal ouverture/fermeture)
-const modalSucess = document.getElementsByClassName("bground-check");
-function lauchModalSucess() {
-  modalSucess.style.display = "block";
-}
-/*
-SI il n'y a pas d'erreurs, L'envoie est réussis
-    Et ouvre une nouvelle fenêtre "Merci pour votre inscription"
-    Avec une "close" et un bouton "Fermer"
-SINON les erreurs sont affichés selon la case en utilisant la fonction précédente
-*/

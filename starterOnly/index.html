@@ -20,7 +20,7 @@
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()"> <!-- Version mobile : menu burger -->
+        <a href="javascript:void(0);" class="icon" onclick="editNav()"> <!-- Version mobile : déroulement du menu burger -->
           <i class="fa fa-bars"></i>
         </a>
       </div>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="hero-img"><img src="./bg_img.jpg" alt="img" /></div>
-        <button class="btn-signup modal-btn">Je m'inscris</button> <!-- Version mobile-->
+        <button class="btn-signup modal-btn">Je m'inscris</button> <!-- Version mobile avec btn-signup -->
       </div>
 
 
@@ -45,9 +45,10 @@
           <div class="modal-body">
             <form
               name="myForm"
+              id="myForm"
               action="index.html"
-              method="get"
-              onsubmit="return validateForm()" >
+              method="GET" >
+               <!-- onsubmit="return validateForm()" -->
 
                 <!-- Prénom -->
                 <label for="first">Prénom</label><br>
@@ -75,8 +76,9 @@
                 <!-- Email -->
                 <label for="email">E-mail</label><br>
                 <input
+                  type="email"
                   class="text-control mail-name"
-                  type="email mail-name"
+                  pattern="username@hostname.tld"
                   id="email"
                   name="email"
                   required
@@ -101,6 +103,7 @@
                 type="number"
                 id="quantity"
                 name="quantity"
+                required
                 min="0"
                 max="99"/><br>
                 <span class="data-error quantity-error">Entrez un chiffre entre 0 et 99</span>
@@ -176,7 +179,6 @@
                   type="checkbox"
                   id="checkbox1"
                   checked />
-
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
@@ -187,7 +189,6 @@
                 class="checkbox-input"
                 type="checkbox"
                 id="checkbox2" />
-
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
@@ -206,12 +207,11 @@
         </div>
       </div>
 
-      <div class="bground-check"> <!-- Apparition seconde modal -->
-        <div class="content"> <!-- Contenu du modal-->
+      <div class="bground bground-check"> <!-- Apparition seconde modal -->
+        <div class="content">
           <span class="close"></span>
-          <h2 class="hero-headline">Merci pour votre inscription</h1>
-          <button
-          class="btn-submit btn-close-modal">Fermer</button>
+          <h2 class="hero-success">Merci pour votre inscription</h1>
+          <button class="btn-submit btn-close-modal">Fermer</button>
         </div>
       </div>
 
