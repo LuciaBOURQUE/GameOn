@@ -28,7 +28,6 @@ function closeModal () {
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
 // PARTIE B - Fonctions des évènements inputs
 const btnSubmit = document.querySelector(".btn-submit")
 btnSubmit.addEventListener("click", (e) => {
@@ -56,7 +55,6 @@ function validateForm() {
     return false;
     }
 }
-
 function validInput () {
   firstInput();
   lastInput();
@@ -66,6 +64,8 @@ function validInput () {
   checkboxInput();
   conditionInput();
 }
+
+
 
 // Nouvelle modale pour la partie sucess !
 const modalSucess = document.querySelector(".bground-check");
@@ -81,7 +81,6 @@ closeBtnModal.addEventListener("click", closeModalCheck);
 function closeModalCheck () {
   modalSucess.style.display = "none";
 }
-
 
 
 
@@ -180,6 +179,7 @@ function checkboxInput() {
     return false;
     }
   }
+
 
 
 // Checkbox conditions - La case 1 est obligatoire l'autre optionnel
