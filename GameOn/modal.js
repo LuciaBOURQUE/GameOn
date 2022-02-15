@@ -69,6 +69,7 @@ function validInput () {
 
 // Nouvelle modale pour la partie sucess !
 const modalSucess = document.querySelector(".bground-check");
+const closeCrossSucess = document.querySelector("close-modal");
 const closeBtnModalCheck = document.querySelector(".btn-close-modal");
 // Ouverture/fermeture 
 function sucessLauchModal() {
@@ -77,6 +78,12 @@ function sucessLauchModal() {
 }
 // Fermeture modale sucess
 closeBtnModalCheck.addEventListener("click", closeModalCheck);
+closeBtnModal.addEventListener("click", closeModalCheck);
+function closeModalCheck () {
+  modalSucess.style.display = "none";
+}
+
+closeCrossSucess.addEventListener("click", closeModalCheck);
 closeBtnModal.addEventListener("click", closeModalCheck);
 function closeModalCheck () {
   modalSucess.style.display = "none";
@@ -115,11 +122,11 @@ function lastInput () {
 }
 
 
-
-// E-mail REGEX !!!
+// E-mail Regex
 function mailInput () {
   let mail = document.forms["myForm"]["email"].value;
-  if(!mail){
+  let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  if(!regex.test(mail)) {
     document.querySelector('.mail-name').classList.add("error");
     document.querySelector('.mail-error').style.opacity = "1";
     return false;
@@ -164,21 +171,24 @@ function quantityInput() {
 
 
 
-// Checkbox - 1 choix à sélectionner
 function checkboxInput() {
-  let checkbox = document.querySelectorAll(".checkbox-input");
-  
-  // Si une des cases est coché (trouver une formule plus optimale)
-  if(checkbox[0].checked || checkbox[1].checked
-    || checkbox[2].checked || checkbox[3].checked
-    || checkbox[4].checked || checkbox[5].checked){ 
-    document.querySelector('.checkbox-error').style.opacity = "0";
-    return true;
-  } else {
-    document.querySelector('.checkbox-error').style.opacity = "1";
-    return false;
+  let checkbox = document.querySelectorAll("input[type=radio]");
+  let noCheck = false;
+
+  checkbox.forEach(city => {
+    if (city.checked === true) {
+      console.log(city.value);
+      document.querySelector('.checkbox-error').style.opacity = "0";
+      return true;
+    } else {
+      document.querySelector('.checkbox-error').style.opacity = "1";
+      console.log("L'erreur est bien prit en compte");
+      return false;
     }
-  }
+  });
+}
+
+
 
 
 
