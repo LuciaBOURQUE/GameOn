@@ -382,6 +382,10 @@ input {
   border: 0;
 }
 
+.btn-close-modal {
+  margin-bottom: 50px;
+}
+
 /* PARTIE 3 - Footer : paramètres */
 footer {
   padding-left: 2vw;

@@ -36,6 +36,7 @@ btnSubmit.addEventListener("click", (e) => {
 })
 
 
+
 // Action SUBMIT par le Formulaire
 function validateForm() {
   if (
@@ -67,9 +68,9 @@ function validInput () {
 
 
 
-// Nouvelle modale pour la partie sucess !
+// Nouvelle modale pour la partie sucess
 const modalSucess = document.querySelector(".bground-check");
-const closeCrossSucess = document.querySelector("close-modal");
+const closeCrossSucess = document.querySelector(".close-modal");
 const closeBtnModalCheck = document.querySelector(".btn-close-modal");
 // Ouverture/fermeture 
 function sucessLauchModal() {
@@ -120,6 +121,7 @@ function lastInput () {
     return true;
   }
 }
+
 
 
 // E-mail Regex
@@ -174,21 +176,20 @@ function quantityInput() {
 function checkboxInput() {
   let checkbox = document.querySelectorAll("input[type=radio]");
   let noCheck = false;
-
-  checkbox.forEach(city => {
-    if (city.checked === true) {
-      console.log(city.value);
-      document.querySelector('.checkbox-error').style.opacity = "0";
-      return true;
-    } else {
-      document.querySelector('.checkbox-error').style.opacity = "1";
-      console.log("L'erreur est bien prit en compte");
-      return false;
+  
+  checkbox.forEach((city) => {
+    if (city.checked == true) {
+      noCheck = true;
     }
   });
+  if (noCheck == true) {
+    document.querySelector('.checkbox-error').style.opacity = "0";
+    return true;
+  } else {
+    document.querySelector('.checkbox-error').style.opacity = "1";
+    return false;
+  }
 }
-
-
 
 
 
