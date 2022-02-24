@@ -15,7 +15,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-/*  background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -67,7 +66,7 @@ img {
   display: none;
 }
 
-/* Navigation mobile : Paramètres avec JS ! */
+/* Navigation mobile : Paramètres avec JS */
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -193,7 +192,7 @@ main {
 }
 
 /* PARTIE 3 : La modale contenant le formulaire (invisible) */
-.bground { /* Par défaut le modal est fermé et n'est pas affiché */
+.bground {
   display: none;
   position: fixed;
   z-index: 1;
@@ -205,7 +204,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content { /* Ou est la height ? */
+.content {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;

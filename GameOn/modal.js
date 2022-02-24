@@ -172,7 +172,7 @@ function quantityInput() {
 }
 
 
-
+// Tourois à checker
 function checkboxInput() {
   let checkbox = document.querySelectorAll("input[type=radio]");
   let noCheck = false;
@@ -193,7 +193,7 @@ function checkboxInput() {
 
 
 
-// Checkbox conditions - La case 1 est obligatoire l'autre optionnel
+// Checkbox conditions
 function conditionInput() {
   let checkboxCondition = document.getElementById("checkbox1");
   if(!checkboxCondition.checked) { 
