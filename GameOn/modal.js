@@ -1,4 +1,4 @@
-// PARTIE A - Navigation et modal
+// PARTIE A - Navigation et modale
 // Version mobile : Menu burger paramètres
 function editNav() {
   var x = document.getElementById("myTopnav");
@@ -8,8 +8,6 @@ function editNav() {
     x.className = "topnav";
   }
 }
-
-
 
 // Ouverture et fermeture de la modale
 const modalbg = document.querySelector(".bground");
@@ -35,9 +33,6 @@ btnSubmit.addEventListener("click", (e) => {
   validateForm(); // Les données du fourmulaire doivent être validé
 })
 
-
-
-// Action SUBMIT par le Formulaire
 function validateForm() {
   if (
   firstInput()&&
@@ -47,16 +42,15 @@ function validateForm() {
   quantityInput()&&
   checkboxInput()&&
   conditionInput() ) {
-    alert("GOOD");
     sucessLauchModal();
     return true;
   } else {
     validInput();
-    alert("BAD");
     return false;
     }
 }
-function validInput () {
+
+function validInput() {
   firstInput();
   lastInput();
   mailInput();
@@ -106,8 +100,6 @@ function firstInput () {
   }
 }
 
-
-
 // Nom
 function lastInput () {
   let last = document.forms["myForm"]["last"].value;
@@ -121,8 +113,6 @@ function lastInput () {
     return true;
   }
 }
-
-
 
 // E-mail Regex
 function mailInput () {
@@ -139,8 +129,6 @@ function mailInput () {
   }
 }
 
-
-
 // Date de naissance
 function dateInput () {
   let birthday = document.forms["myForm"]["birthdate"].value;
@@ -155,8 +143,6 @@ function dateInput () {
   }
 }
 
-
-
 // Quantité tournois
 function quantityInput() {
   let quantity = document.forms["myForm"]["quantity"].value;
@@ -170,7 +156,6 @@ function quantityInput() {
     return true;
   }
 }
-
 
 // Tourois à checker
 function checkboxInput() {
@@ -190,8 +175,6 @@ function checkboxInput() {
     return false;
   }
 }
-
-
 
 // Checkbox conditions
 function conditionInput() {

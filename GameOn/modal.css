@@ -201,7 +201,7 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
+  background-color: hsla(234, 71%, 36%, 0.4);
 }
 
 .content {
